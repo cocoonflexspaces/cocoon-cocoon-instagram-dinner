@@ -20,7 +20,7 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 
-mkdir -p img/joy img/elliot img/brutal img/halloway img/skylight img/fountain img/lazarus img/stagehouse img/tower img/skyline img/skyline-pool img/bankhall
+mkdir -p img/joy img/elliot img/brutal img/halloway img/skylight img/fountain img/lazarus img/stagehouse img/tower img/skyline img/skyline-pool img/bankhall img/luz
 
 UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15'
 COOKIE_JAR="$(mktemp)"
@@ -225,6 +225,16 @@ dl "${DRV}1HriidRG9lya3xNBGDu4tyqyTgnr6FH5p&sz=w1600" "img/bankhall/05.jpg"
 dl "${DRV}1xkZCjZGyNEOjYjrQDHLYwcTeQBPc8v-U&sz=w1600" "img/bankhall/06.jpg"
 dl "${DRV}1x89NyerWmX8FCljSZcFL-smC3xnJCN4Z&sz=w1600" "img/bankhall/07.jpg"
 dl "${DRV}1je62-Xvam-o3lUQj0rKPHXMdPp_15SNR&sz=w1600" "img/bankhall/08.jpg"
+
+echo "────────── Casa Luz (Drive — same set as the COS deck) ──────────"
+dl "${DRV}1sM8-EoIaPgl4PGYzXVInzWqigv8vQslr&sz=w1600" "img/luz/01.jpg"
+dl "${DRV}1Gv5RFV7ICViuqVIAjMmNZ_rvc0Ws5--X&sz=w1600" "img/luz/02.jpg"
+dl "${DRV}1qtLJcFpH8rEN2ah2D6m3GNAOUeb16181&sz=w1600" "img/luz/03.jpg"
+dl "${DRV}1xSzQW6DfHTX0epHkVeT52G1eF7PuwwNL&sz=w1600" "img/luz/04.jpg"
+dl "${DRV}1lGBBJYbUiD7ejSGVXZ1LlbvkMW-LdfQh&sz=w1600" "img/luz/05.jpg"
+dl "${DRV}1W-ToX7uu7crYajVttmULJXT0GnUsdQr8&sz=w1600" "img/luz/06.jpg"
+dl "${DRV}1ImJjY2jmrI3AijiYHRbIgXLQFBlJIFok&sz=w1600" "img/luz/07.jpg"
+dl "${DRV}1UQb-ORvm86RAvJ5qTO3xnqHjfZhVAnR6&sz=w1600" "img/luz/08.jpg"
 
 echo ""
 echo "────────── Resizing to ≤1600px ──────────"
