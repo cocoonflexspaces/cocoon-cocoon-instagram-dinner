@@ -1,0 +1,17 @@
+# Internal tools — never publish (contain raw Drive IDs / LD source URLs)
+picker.html
+ld-picker.html
+approval.html
+
+# Scratch / working files
+_*
+*.bak
+
+# Staging image pools (not referenced by the deck)
+img/skyline-pool/
+img/moonlight/
+img/moonlight-pool/
+img/colonnade/
+img/colonnade-pool/
+img/salon94/
+_sheets/
