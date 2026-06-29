@@ -20,7 +20,7 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 
-mkdir -p img/joy img/elliot img/brutal img/halloway img/skylight img/fountain img/lazarus img/stagehouse img/tower img/skyline img/skyline-pool img/bankhall img/luz img/raisfeld/nyc195 img/raisfeld/nyc293 img/raisfeld/nyc323 img/raisfeld/nyc327 img/raisfeld/nyc315 img/raisfeld/nyc322 img/raisfeld/bk410 img/raisfeld/bk437 img/raisfeld/bk166 img/maxima img/victoria img/ld/2044 img/ld/2060 img/ld/2253 img/ld/2593 img/ld/3333 img/ld/2580 img/ld/2223 img/ld/9005 img/ld/2244 img/ld/2136 img/ld/2490 img/ld/2132 img/ld/2267
+mkdir -p img/joy img/elliot img/brutal img/halloway img/skylight img/fountain img/lazarus img/stagehouse img/tower img/skyline img/skyline-pool img/bankhall img/luz img/raisfeld/nyc195 img/raisfeld/nyc293 img/raisfeld/nyc323 img/raisfeld/nyc327 img/raisfeld/nyc315 img/raisfeld/nyc322 img/raisfeld/bk410 img/raisfeld/bk437 img/raisfeld/bk166 img/maxima img/victoria img/joynaked img/ld/2044 img/ld/2060 img/ld/2253 img/ld/2593 img/ld/3333 img/ld/2580 img/ld/2223 img/ld/9005 img/ld/2244 img/ld/2136 img/ld/2490 img/ld/2132 img/ld/2267
 
 UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15'
 COOKIE_JAR="$(mktemp)"
@@ -478,11 +478,26 @@ dl "https://cocoonflexspaces.com/wp-content/uploads/2024/10/cocoon-casa-victoria
 dl "https://cocoonflexspaces.com/wp-content/uploads/2024/10/cocoon-casa-victoria-living-tv-room.jpg" "img/victoria/07.jpg" "$R"
 dl "https://cocoonflexspaces.com/wp-content/uploads/2024/10/cocoon-casa-victoria-living-room-art-detail.jpg" "img/victoria/08.jpg" "$R"
 
+
+echo "────────── Casa Joy · unfurnished (Drive) ──────────"
+dl "${DRV}1FbezMzAN9VaEFVV6DDA8oImwdi9UYJUO&sz=w1600" "img/joynaked/01.jpg"
+dl "${DRV}1laR8BwR-Ywu_K0IvvFrsm_j5b9z_988p&sz=w1600" "img/joynaked/02.jpg"
+dl "${DRV}1a9NnCXuVq-lLkt-nNY_WdZtqd2-xlfZ8&sz=w1600" "img/joynaked/03.jpg"
+dl "${DRV}1Gn8755BeE9FUb8ziDIr1ujH1Hwc-JLz-&sz=w1600" "img/joynaked/04.jpg"
+dl "${DRV}1bA_vlfq738HjOvSmkZWDQSAxbdjTVPn5&sz=w1600" "img/joynaked/05.jpg"
+dl "${DRV}1OXznh2Ub1upaMBKUTbYmLy8ml8XHwUKe&sz=w1600" "img/joynaked/06.jpg"
+dl "${DRV}1AqoBIBGGmD0wvX3u34lMp5q1B-aYkbwb&sz=w1600" "img/joynaked/07.jpg"
+dl "${DRV}1sHRy6-D1HtX3M_eRwyhYWBkkaNnB5tvR&sz=w1600" "img/joynaked/08.jpg"
+dl "${DRV}1nyHMsXgsmjiNBpH-75B296AmF2n0KJ4A&sz=w1600" "img/joynaked/09.jpg"
+dl "${DRV}1G5NdkRoDc-icvZ9YDx5wbouA3pee_i3G&sz=w1600" "img/joynaked/10.jpg"
+dl "${DRV}1rV9_mzjhTENQg9Sy1MccbXtvxKoOoYf3&sz=w1600" "img/joynaked/11.jpg"
+dl "${DRV}1PTaFkiDYCR5Pzq4bUL-uQVcDrSUM1vOs&sz=w1600" "img/joynaked/12.jpg"
+
 echo ""
 echo "────────── Resizing to ≤1600px ──────────"
 if command -v magick >/dev/null 2>&1 || command -v convert >/dev/null 2>&1; then
   CMD="magick"; command -v $CMD >/dev/null 2>&1 || CMD="convert"
-  for f in img/joy/*.jpg img/elliot/*.jpg img/brutal/*.jpg img/halloway/*.jpg img/skylight/*.jpg img/fountain/*.jpg img/lazarus/*.jpg img/stagehouse/*.jpg img/tower/*.jpg img/skyline/*.jpg img/bankhall/*.jpg img/luz/*.jpg img/raisfeld/*/*.jpg img/maxima/*.jpg img/victoria/*.jpg img/ld/*/*.jpg; do
+  for f in img/joy/*.jpg img/elliot/*.jpg img/brutal/*.jpg img/halloway/*.jpg img/skylight/*.jpg img/fountain/*.jpg img/lazarus/*.jpg img/stagehouse/*.jpg img/tower/*.jpg img/skyline/*.jpg img/bankhall/*.jpg img/luz/*.jpg img/raisfeld/*/*.jpg img/maxima/*.jpg img/victoria/*.jpg img/joynaked/*.jpg img/ld/*/*.jpg; do
     [ -f "$f" ] || continue
     $CMD "$f" -resize "1600x1600>" -strip -quality 84 "$f.tmp" && mv "$f.tmp" "$f"
   done
